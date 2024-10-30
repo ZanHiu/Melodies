@@ -1,0 +1,411 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Melodies</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #1f1f1f;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .sidebar h1 {
+            color: #e91e63;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar ul li a i {
+            margin-right: 10px;
+        }
+        .sidebar ul li a.active {
+            color: #e91e63;
+        }
+        .sidebar ul li a:hover {
+            color: #e91e63;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header input {
+            width: 300px;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+        .header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        .header nav a:hover {
+            color: #e91e63;
+        }
+        .header .auth-buttons a {
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .header .auth-buttons a.login {
+            background-color: transparent;
+            border: 1px solid #fff;
+        }
+        .header .auth-buttons a.signup {
+            background-color: #e91e63;
+        }
+        .hero {
+            background-image: url('https://placehold.co/800x400');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: left;
+            color: #fff;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .hero .buttons a {
+            padding: 15px 30px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        .hero .buttons a.discover {
+            background-color: #e91e63;
+        }
+        .hero .buttons a.create {
+            background-color: transparent;
+            border: 1px solid #fff;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .section h2 span {
+            color: #e91e63;
+        }
+        .section .songs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section .songs .song {
+            width: 150px;
+            text-align: center;
+        }
+        .section .songs .song img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .section .songs .song p {
+            margin: 0;
+        }
+        .section .songs .song p.title {
+            font-weight: 500;
+        }
+        .section .songs .song p.artist {
+            color: #888;
+        }
+        .section .view-all {
+            color: #888;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .section .view-all:hover {
+            color: #e91e63;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="sidebar">
+   <h1>
+    Melodies
+   </h1>
+   <ul>
+    <li>
+     <a class="active" href="#">
+      <i class="fas fa-home">
+      </i>
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="#">
+      <i class="fas fa-compass">
+      </i>
+      Discover
+     </a>
+    </li>
+    <li>
+     <a href="#">
+      <i class="fas fa-music">
+      </i>
+      Albums
+     </a>
+    </li>
+    <li>
+     <a href="#">
+      <i class="fas fa-user">
+      </i>
+      Artists
+     </a>
+    </li>
+    <li>
+     <a href="#">
+      <i class="fas fa-clock">
+      </i>
+      Recently Added
+     </a>
+    </li>
+    <li>
+     <a href="#">
+      <i class="fas fa-play-circle">
+      </i>
+      Most played
+     </a>
+    </li>
+    <li>
+     <a href="#">
+      <i class="fas fa-heart">
+      </i>
+      Your favorites
+     </a>
+    </li>
+    <li>
+     <a href="#">
+      <i class="fas fa-list">
+      </i>
+      Your playlist
+     </a>
+    </li>
+    <li>
+     <a href="#">
+      <i class="fas fa-plus-circle">
+      </i>
+      Add playlist
+     </a>
+    </li>
+    <li>
+     <a href="#">
+      <i class="fas fa-cog">
+      </i>
+      Setting
+     </a>
+    </li>
+    <li>
+     <a href="#">
+      <i class="fas fa-sign-out-alt">
+      </i>
+      Logout
+     </a>
+    </li>
+   </ul>
+  </div>
+  <div class="main-content">
+   <div class="header">
+    <input placeholder="Search for Music, Artists..." type="text"/>
+    <nav>
+     <a href="#">
+      About Us
+     </a>
+     <a href="#">
+      Contact
+     </a>
+     <a href="#">
+      Premium
+     </a>
+    </nav>
+    <div class="auth-buttons">
+     <a class="login" href="#">
+      Login
+     </a>
+     <a class="signup" href="#">
+      Sign Up
+     </a>
+    </div>
+   </div>
+   <div class="hero">
+    <h1>
+     All the
+     <span>
+      Best Songs
+     </span>
+     in One Place
+    </h1>
+    <p>
+     On our website, you can access an amazing collection of popular and new songs. Stream your favorite tracks in high quality and enjoy without interruptions. Whatever your taste in music, we have it all for you.
+    </p>
+    <div class="buttons">
+     <a class="discover" href="#">
+      Discover Now
+     </a>
+     <a class="create" href="#">
+      Create Playlist
+     </a>
+    </div>
+   </div>
+   <div class="section">
+    <h2>
+     Weekly Top
+     <span>
+      Songs
+     </span>
+    </h2>
+    <div class="songs">
+     <div class="song">
+      <img alt="Album cover of 'Whatever It Takes' by Imagine Dragons" height="150" src="https://storage.googleapis.com/a1aa/image/slqyDGP28lLSEpvf0NuB2vch56snjOCqzFzTmc9ZgYFyov1JA.jpg" width="150"/>
+      <p class="title">
+       Whatever It Takes
+      </p>
+      <p class="artist">
+       Imagine Dragons
+      </p>
+     </div>
+     <div class="song">
+      <img alt="Album cover of 'Skyfall' by Adele" height="150" src="https://storage.googleapis.com/a1aa/image/MpereU2lSsoyeIBOM7M6DYeFechTUCE5du9VqCJc7Ct9N6bdC.jpg" width="150"/>
+      <p class="title">
+       Skyfall
+      </p>
+      <p class="artist">
+       Adele
+      </p>
+     </div>
+     <div class="song">
+      <img alt="Album cover of 'Superman' by Eminem" height="150" src="https://storage.googleapis.com/a1aa/image/gvxMCb0pKPbNLN2M84jSEodx4rnhh2kywuNTbGQc25Rb036E.jpg" width="150"/>
+      <p class="title">
+       Superman
+      </p>
+      <p class="artist">
+       Eminem
+      </p>
+     </div>
+     <div class="song">
+      <img alt="Album cover of 'Softcore' by The Neighbourhood" height="150" src="https://storage.googleapis.com/a1aa/image/6IeZkCxTvJWOEK2bVep57F5WQ8RxRdJlILOUia0j2dYnRfWnA.jpg" width="150"/>
+      <p class="title">
+       Softcore
+      </p>
+      <p class="artist">
+       The Neighbourhood
+      </p>
+     </div>
+     <div class="song">
+      <img alt="Album cover of 'The Loneliest' by Måneskin" height="150" src="https://storage.googleapis.com/a1aa/image/zm15FqLqvuJoBl9EKja0aqJSvEeDAh0OjQT8oeCaljioRfWnA.jpg" width="150"/>
+      <p class="title">
+       The Loneliest
+      </p>
+      <p class="artist">
+       Måneskin
+      </p>
+     </div>
+     <a class="view-all" href="#">
+      View All
+     </a>
+    </div>
+   </div>
+   <div class="section">
+    <h2>
+     New Release
+     <span>
+      Songs
+     </span>
+    </h2>
+    <div class="songs">
+     <div class="song">
+      <img alt="Album cover of 'Time' by Luciano" height="150" src="https://storage.googleapis.com/a1aa/image/ghCZNIIcOtq0L5zNuMlyxq0gL30kVbkfPpoYpfGT5MEmRfWnA.jpg" width="150"/>
+      <p class="title">
+       Time
+      </p>
+      <p class="artist">
+       Luciano
+      </p>
+     </div>
+     <div class="song">
+      <img alt="Album cover of '112' by joznez" height="150" src="https://storage.googleapis.com/a1aa/image/XepVlVee5PUHRo1BkMI7ZBYxzL8AOFq88CO6VSWLj7xjjetOB.jpg" width="150"/>
+      <p class="title">
+       112
+      </p>
+      <p class="artist">
+       joznez
+      </p>
+     </div>
+     <div class="song">
+      <img alt="Album cover of 'We Don't Care' by Kyanu &amp; DJ Gollum" height="150" src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg" width="150"/>
+      <p class="title">
+       We Don't Care
+      </p>
+      <p class="artist">
+       Kyanu &amp; DJ Gollum
+      </p>
+     </div>
+     <div class="song">
+      <img alt="Album cover of 'Who I Am' by Alan Walker &amp; Ebbas" height="150" src="https://storage.googleapis.com/a1aa/image/cyM49EIyvNqDDhcEedqhe2CmLDfXnNuXeT9xtp68TKr7G9tOB.jpg" width="150"/>
+      <p class="title">
+       Who I Am
+      </p>
+      <p class="artist">
+       Alan Walker &amp; Ebbas
+      </p>
+     </div>
+     <div class="song">
+      <img alt="Album cover of 'Balxo' by xxxtentacion" height="150" src="https://storage.googleapis.com/a1aa/image/zaQ3zMzAzK62ABTd4Ts0zDEF0kINVeTElRUJbZYX0sm1ov1JA.jpg" width="150"/>
+      <p class="title">
+       Balxo
+      </p>
+      <p class="artist">
+       xxxtentacion
+      </p>
+     </div>
+     <a class="view-all" href="#">
+      View All
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
