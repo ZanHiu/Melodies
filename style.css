@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+.sidebar {
+  width: 250px;
+  background-color: #1f1f1f;
+  height: 100vh;
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.sidebar h1 {
+  color: #e91e63;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+.sidebar ul li a i {
+  margin-right: 10px;
+}
+.sidebar ul li a.active {
+  color: #e91e63;
+}
+.sidebar ul li a:hover {
+  color: #e91e63;
+}
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.header input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+.header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 18px;
+}
+.header nav a:hover {
+  color: #e91e63;
+}
+.header .auth-buttons a {
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-left: 10px;
+}
+.header .auth-buttons a.login {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+.header .auth-buttons a.signup {
+  background-color: #e91e63;
+}
+.hero {
+  background-image: url('https://placehold.co/800x400');
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  padding: 40px;
+  text-align: left;
+  color: #fff;
+  position: relative;
+}
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.hero .buttons a {
+  padding: 15px 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 18px;
+}
+.hero .buttons a.discover {
+  background-color: #e91e63;
+}
+.hero .buttons a.create {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.section h2 span {
+  color: #e91e63;
+}
+.section .songs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section .songs .song {
+  width: 150px;
+  text-align: center;
+}
+.section .songs .song img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.section .songs .song p {
+  margin: 0;
+}
+.section .songs .song p.title {
+  font-weight: 500;
+}
+.section .songs .song p.artist {
+  color: #888;
+}
+.section .view-all {
+  color: #888;
+  text-decoration: none;
+  font-size: 18px;
+}
+.section .view-all:hover {
+  color: #e91e63;
+}
