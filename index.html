@@ -18,21 +18,21 @@
     <ul>
       <li class="menu-tab">Menu</li>
       <li>
-        <a class="active" href="#">
+        <a class="active" href="index.html">
           <i class="fas fa-home">
           </i>
           Home
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="discover.html">
           <i class="fas fa-compass">
           </i>
           Discover
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="albums.html">
           <i class="fas fa-music">
           </i>
           Albums
@@ -217,7 +217,7 @@
           </p>
         </div>
         <a class="view-all" href="#">
-          <i class="fas fa-plus"></i>
+          <div class="icon"><i class="fas fa-plus"></i></div>
           <p>View all</p>
         </a>
       </div>
@@ -288,7 +288,7 @@
           </p>
         </div>
         <a class="view-all" href="#">
-          <i class="fas fa-plus"></i>
+          <div class="icon"><i class="fas fa-plus"></i></div>
           <p>View all</p>
         </a>
       </div>
@@ -416,6 +416,7 @@
       </table>
       <div class="btn-wrapper">
         <a class="view-all-btn" href="#">
+          <!-- <div class="icon"></div> -->
           <i class="fas fa-plus"></i>
           View All
         </a>
@@ -474,7 +475,7 @@
           </p>
         </div>
         <a class="view-all" href="#">
-          <i class="fas fa-plus"></i>
+          <div class="icon"><i class="fas fa-plus"></i></div>
           <p>View all</p>
         </a>
       </div>
@@ -523,7 +524,7 @@
           <p class="view-count">3M views</p>
         </div>
         <a class="view-all" href="#">
-          <i class="fas fa-plus"></i>
+          <div class="icon"><i class="fas fa-plus"></i></div>
           <p>View all</p>
         </a>
       </div>
@@ -594,7 +595,7 @@
           </p>
         </div>
         <a class="view-all" href="#">
-          <i class="fas fa-plus"></i>
+          <div class="icon"><i class="fas fa-plus"></i></div>
           <p>View all</p>
         </a>
       </div>
@@ -656,8 +657,38 @@
             </form>
           </div>
           <div class="content">
-            <h2>Log In</h2>
-            <p>You can be one of the members of our platform by just adding some necessarily information.</p>
+            <form action="">
+              <div class="input-group">
+                <div class="input-box only-one">
+                  <label for="username">Username</label>
+                  <i class="fas fa-user input-icon"></i>
+                  <input type="text" id="username" name="username" placeholder="Enter your username" />
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="input-box only-one">
+                  <label for="email">Password</label>
+                  <i class="fas fa-lock input-icon"></i>
+                  <input type="password" id="password" name="password" placeholder="Enter your password" />
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="input-box only-one">
+                  <button type="submit">Log In</button>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="input-box only-one">
+                  <div class="divide-line">
+                    <div class="left-line"></div>
+                    <p>Or</p>
+                    <div class="right-line"></div>
+                  </div>
+                  <i class="fab fa-google button-icon"></i>
+                  <button type="submit">Log In With Google</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

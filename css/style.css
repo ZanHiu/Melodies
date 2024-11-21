@@ -61,6 +61,12 @@ body {
   padding: 48px 25px;
 }
 
+/* Sub content */
+.sub-content {
+  margin-left: 270px;
+  padding: 48px 25px;
+}
+
 /* Header */
 .header {
   display: flex;
@@ -80,7 +86,7 @@ body {
 .header nav a {
   color: #fff;
   text-decoration: none;
-  margin: 0 28px;
+  margin: 0 28px 0 0;
   font-size: 16px;
 }
 .header nav a:hover {
@@ -150,18 +156,21 @@ body {
   color: #0E9EEF;
 }
 
-/* Section */
-.section {
+/* Section & Subhero */
+.section,
+.sub-hero-content {
   margin-bottom: 40px;
   margin-top: 64px;
   margin-left: 19px;
   margin-right: 39px;
 }
-.section .section-title {
+.section .section-title,
+.sub-hero-content .sub-hero-title {
   font-size: 24px;
   margin-bottom: 20px;
 }
-.section h2 span {
+.section h2 span,
+.sub-hero-content h2 span {
   color: #EE10B0;
 }
 
@@ -227,8 +236,15 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.section .videos .left-col {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 80px;
+  row-gap: 40px;
+}
 .section .videos .video {
   width: 280px;
+  max-width: 280px;
   height: 250px;
   padding: 8px 15px;
   background-color: #1F1F1F;
@@ -258,7 +274,33 @@ body {
   font-size: 12px;
   float: right;
 }
-.section .view-all {
+
+/* Music Genres */
+.sub-hero-content .music-genres {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub-hero-content .music-genres .genre {
+  width: 280px;
+  height: 250px;
+  padding: 8px 15px;
+}
+.sub-hero-content .music-genres .genre img {
+  width: 100%;
+  height: 170px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+.sub-hero-content .music-genres .genre p.title {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0px 0px 8px 0px;
+}
+
+/* View All */
+.section .view-all,
+.sub-hero-content .view-all {
   color: #888;
   text-decoration: none;
   font-size: 16px;
@@ -267,8 +309,19 @@ body {
   justify-content: center;
   align-items: center;
 }
-.section .view-all:hover {
+.section .view-all:hover,
+.sub-hero-content .view-all:hover {
   color: #EE10B0;
+}
+.section .view-all .icon,
+.sub-hero-content .view-all .icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 100%;
+  background-color: #1E1E1E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Song List */

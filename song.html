@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Melodies</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link href="./css/sub.css" rel="stylesheet" />
+  <link href="./css/global.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h1>
+      Melodies
+    </h1>
+    <ul>
+      <li class="menu-tab">Menu</li>
+      <li>
+        <a href="index.html">
+          <i class="fas fa-home">
+          </i>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="discover.html">
+          <i class="fas fa-compass">
+          </i>
+          Discover
+        </a>
+      </li>
+      <li>
+        <a href="albums.html">
+          <i class="fas fa-music">
+          </i>
+          Albums
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-user">
+          </i>
+          Artists
+        </a>
+      </li>
+      <li class="menu-tab">Library</li>
+      <li>
+        <a href="#">
+          <i class="fas fa-clock">
+          </i>
+          Recently Added
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-play-circle">
+          </i>
+          Most played
+        </a>
+      </li>
+      <li class="menu-tab">Playlist and favorite</li>
+      <li>
+        <a href="#">
+          <i class="fas fa-heart">
+          </i>
+          Your favorites
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-list">
+          </i>
+          Your playlist
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-plus-circle">
+          </i>
+          Add playlist
+        </a>
+      </li>
+      <li class="menu-tab">General</li>
+      <li>
+        <a href="#">
+          <i class="fas fa-cog">
+          </i>
+          Setting
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-sign-out-alt">
+          </i>
+          Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Sub content -->
+  <div class="sub-content">
+    <div class="hero">
+      <!-- Header -->
+      <div class="arrow-icon">
+        <a href="index.html">
+          <i class="fas fa-arrow-left icon"></i>
+        </a>
+      </div>
+      <div class="header">
+        <nav>
+          <a href="#">
+            Share
+          </a>
+          <a href="#">
+            About Us
+          </a>
+          <a href="#">
+            Premium
+          </a>
+        </nav>
+        <div class="auth-icon">
+          <a href="#">
+            <i class="fas fa-user-circle"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero content -->
+      <div class="hero-content">
+        <div class="song-img"><img src="./imgs/songs/song-01.png" alt=""></div>
+        <div class="music-player">
+          <div class="song-info">
+            <h1 class="song-title">Trending songs</h1>
+            <p class="song-artist">The Weeknd</p>
+          </div>
+          <div class="progress-bar">
+            <input type="range" id="progressBar" value="0" min="0" max="100">
+          </div>
+          <div class="controls">
+            <i class="fas fa-redo"></i>
+            <i class="fas fa-arrow-left inside"></i>
+            <i class="fas fa-play-circle large-inside"></i>
+            <i class="fas fa-arrow-right inside"></i>
+            <i class="fas fa-list"></i>
+          </div>
+          <div class="favorite"><i class="fas fa-heart"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section -->
+    <!-- Trending -->
+    <div class="container">
+      <div class="left-col">
+        <div class="section">
+          <table class="song-list">
+            <tr class="song-list-header">
+              <td></td>
+              <td colspan="3">119 comments</td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                1
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                2
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                3
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                4
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                5
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                6
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                7
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                8
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                9
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                10
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                11
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                12
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                13
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                14
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                15
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                16
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                17
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                18
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                19
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-index">
+                20
+              </td>
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>Nov 4, 2023</td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="right-col">
+        <div class="section">
+          <table class="song-list">
+            <tr class="song-list-header">
+              <td>In Album</td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-list-header">
+              <td>Related Songs</td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+            <tr class="song-item">
+              <td class="song-infor">
+                <img alt="" height="60"
+                  src="https://storage.googleapis.com/a1aa/image/dPeJMsgwWjzQDiMT17iqaS4aShiQSkHLgF6n8me4ICAqRfWnA.jpg"
+                  width="60" />
+                <div class="song-name">We Don't Care<div class="song-artist">Kyanu & Dj Gollum</div>
+                </div>
+              </td>
+              <td>
+                <i class="fas fa-heart"></i>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="about">
+        <h2>About</h2>
+        <p>
+          Melodies is a website that has been created for over <span class="hl-primary">5 year's</span> now and it is
+          one of the most famous music player website's in the world. in this website you can listen and download songs
+          for free. also of you want no limitation you can buy our <a href="#" class="hl-secondary">premium pass's</a>.
+        </p>
+      </div>
+      <div class="footer-menu">
+        <div class="footer-menu-col">
+          <h3>Melodies</h3>
+          <ul>
+            <li>Songs</li>
+            <li>Radio</li>
+            <li>Podcast</li>
+          </ul>
+        </div>
+        <div class="footer-menu-col">
+          <h3>Access</h3>
+          <ul>
+            <li>Explor</li>
+            <li>Artists</li>
+            <li>Playlists</li>
+            <li>Albums</li>
+            <li>Trending</li>
+          </ul>
+        </div>
+        <div class="footer-menu-col">
+          <h3>Contact</h3>
+          <ul>
+            <li>About</li>
+            <li>Policy</li>
+            <li>Social Media</li>
+            <li>Support</li>
+          </ul>
+        </div>
+      </div>
+      <div class="social-media">
+        <h1>Melodies</h1>
+        <div class="social-media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fas fa-phone-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/tab.js"></script>
+</body>
+
+</html>
