@@ -20,10 +20,22 @@
       <div class="header">
         <input placeholder="Search for Music, Artists..." type="text" />
         <nav>
-          <a href="#">
+          <a href="
+            <?php if (isset($_SESSION['login'])){?>
+              <?=$baseurl?>/about
+            <?php } else { ?>
+              <?=$baseurl?>/login
+            <?php } ?>
+          ">
             About Us
           </a>
-          <a href="#">
+          <a href="
+            <?php if (isset($_SESSION['login'])){?>
+              <?=$baseurl?>/contact
+            <?php } else { ?>
+              <?=$baseurl?>/login
+            <?php } ?>
+          ">
             Contact
           </a>
           <a href="#">

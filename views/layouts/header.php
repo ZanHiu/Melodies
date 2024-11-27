@@ -14,7 +14,7 @@
         </nav>
         <div class="auth-buttons">
           <?php if(isset($_SESSION['login'])){?>
-          <a class="profile" href="<?=$baseurl?>/profile/<?=$_SESSION['login']['id']?>"><i class="fas fa-user-circle"></i></a>
+            <a class="profile" href="<?=$baseurl?>/profile/<?=$_SESSION['login']['id']?>"><i class="fas fa-user-circle"></i></a>
           <?php } else { ?>
             <a class="login" href="<?=$baseurl?>/login">
               Login
