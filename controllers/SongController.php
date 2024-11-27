@@ -139,7 +139,7 @@ switch($action){
 
     case "searchsong":
         $search = $_POST['search'] ?? "";
-        $users = searchUser($search); 
+        $songs = searchSong($search); 
         include "views/artist/songs/index.php";
         break;
 }

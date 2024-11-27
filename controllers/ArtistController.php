@@ -1,26 +1,29 @@
 <?php 
-// AlbumController.php (Artist)
-include_once "models/Genre.php";
-include_once "models/Album.php";
+// ArtistController.php (Admin)
+include_once "models/Artist.php";
 switch($action){
-    case "albummanager":
-        $albums = getAlbums();
-        include "views/artist/albums/index.php";
+    case "artistmanager":
+        $artists = getAllArtists();
+        include "views/admin/artists/index.php";
         break;
         
-    case "addalbum":
-        $albums = getAlbums();
+    case "addartist":
         $artists = getAllArtists();
-        include "views/artist/albums/add.php";
+        $users = getAllUsers();
+        include "views/admin/artists/add.php";
         break;
-    case "postalbum":
+    case "postartist":
         $errors = [];
-        $albumName=$_POST['albumName']??"";
-        if($albumName == "") {
-            array_push($errors, "Vui lòng nhập tên album");
+        $name=$_POST['name']??"";
+        if($name == "") {
+            array_push($errors, "Vui lòng nhập tên nghệ sĩ");
+        }
+        $phone=$_POST['phone']??"";
+        if($phone == "") {
+            array_push($errors, "Vui lòng nhập sđt");
         }
         $img = $_FILES["img"]["name"]??"";
-        $target_file = "public/imgs/albums/$img";
+        $target_file = "public/imgs/artists/$img";
         if ($img == "") {
             array_push($errors, "Ảnh không được để trống");
         } else {
@@ -37,34 +40,38 @@ switch($action){
             //     array_push($errors, "Kích thước ảnh quá lớn");
             // }
         }
-        $created = $_POST['created']??"";
-        if($created == "") {
-            array_push($errors, "Vui lòng nhập ngày tạo");
+        $birthday=$_POST['birthday']??"";
+        if($birthday == "") {
+            array_push($errors, "Vui lòng nhập ngày sinh");
         }
-        $artist=$_POST['artist']??"";
-        $artists = getAllArtists();
-        // include "views/artist/albums/add.php";
+        $user=$_POST['user']??"";
+        $users = getAllUsers();
+        // include "views/admin/artists/add.php";
         if (count($errors) == 0) {      
-            addAlbum($albumName, $img, $created, $artist);
+            addArtist($name, $phone, $img, $birthday, $user);
             move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
-            header("Location: $baseurl/albummanager");
+            header("Location: $baseurl/artistmanager");
         }
         break;
 
-    case "editalbum":
+    case "editartist":
         $id = $_GET['id'];
-        $album = getAlbum($id);
-        $artists = getAllArtists();
-        include "views/artist/albums/edit.php";
+        $artist = getArtist($id);
+        $users = getAllUsers();
+        include "views/admin/artists/edit.php";
         break;
-    case "updatealbum":
+    case "updateartist":
         $errors = [];
-        $albumName=$_POST['albumName']??"";
-        if($albumName == "") {
-            array_push($errors, "Vui lòng nhập tên album");
+        $name=$_POST['name']??"";
+        if($name == "") {
+            array_push($errors, "Vui lòng nhập tên người dùng");
+        }
+        $phone=$_POST['phone']??"";
+        if($phone == "") {
+            array_push($errors, "Vui lòng nhập sđt");
         }
         $img = $_FILES["img"]["name"]??"";
-        $target_file = "public/imgs/albums/$img";
+        $target_file = "public/imgs/artists/$img";
         if ($img == "") {
             array_push($errors, "Ảnh không được để trống");
         } else {
@@ -81,35 +88,35 @@ switch($action){
             //     array_push($errors, "Kích thước ảnh quá lớn");
             // }
         }
-        $created = $_POST['created']??"";
-        if($created == "") {
-            array_push($errors, "Vui lòng nhập ngày tạo");
+        $birthday=$_POST['birthday']??"";
+        if($birthday == "") {
+            array_push($errors, "Vui lòng nhập ngày sinh");
         }
         $id = $_GET['id'];
-        $artist=$_POST['artist']??"";
-        $artists = getAllArtists();
-        // include "views/artist/albums/edit.php";
+        $user=$_POST['user']??"";
+        $users = getAllUsers();
+        // include "views/admin/artists/edit.php";
         if (count($errors) == 0) {      
             if ($img == "") {
                 $oldImg = $_POST['oldImg'] ?? "";
-                updateAlbum($id, $albumName, $oldImg, $created, $artist);
+                updateArtist($id, $name, $phone, $oldImg, $birthday, $user);
             } else {
-                updateAlbum($id, $albumName, $img, $created, $artist);
+                updateArtist($id, $name, $phone, $img, $birthday, $user);
                 move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
             }
-            header("Location: $baseurl/albummanager");
+            header("Location: $baseurl/artistmanager");
         }
         break;
 
-    case "deletealbum":
+    case "deleteartist":
         $id = $_GET['id'] ?? "";
-        deleteAlbum($id);
-        header("Location: $baseurl/albummanager");
+        deleteArtist($id);
+        header("Location: $baseurl/artistmanager");
         break;
 
-    case "searchalbum":
+    case "searchartist":
         $search = $_POST['search'] ?? "";
-        $albums = searchAlbum($search); 
-        include "views/artist/albums/index.php";
+        $artists = searchArtist($search);
+        include "views/admin/artists/index.php";
         break;
 }

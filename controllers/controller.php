@@ -7,4 +7,6 @@
  include "AuthController.php";
  include "SongController.php";
  include "AlbumController.php";
+ include "ArtistController.php";
+ include "GenreController.php";
 ?>

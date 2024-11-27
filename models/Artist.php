@@ -10,7 +10,7 @@ function getTopArtists() {
 }
 function getAllArtists() {
     global $conn;
-    $sql = "SELECT * FROM artists";
+    $sql = "SELECT artists.*, users.name as username FROM artists LEFT JOIN users ON artists.user_id = users.id";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $artists = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -27,29 +27,30 @@ function getArtist($id) {
     return $artist;
 }
 
-function addArtist($name, $phone, $email, $img, $birthday) {
+function addArtist($name, $phone, $img, $birthday, $user_id) {
     global $conn;
-    $sql = "INSERT INTO artists(name, phone, email, img, birthday) VALUES(:name, :phone, :email, :img, :birthday)";
+    $sql = "INSERT INTO artists(name, phone, img, birthday, user_id) VALUES(:name, :phone, :img, :birthday, :user_id)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':phone', $phone);
-    $stmt->bindParam(':email', $email);
     $stmt->bindParam(':img', $img);
     $stmt->bindParam(':birthday', $birthday);
+    $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
     return $conn->lastInsertId();
 }
 
 
-function updateArtist($id, $name, $phone, $email, $img, $birthday) {
+function updateArtist($id, $name, $phone, $img, $birthday, $user_id) {
     global $conn;
-    $sql = "UPDATE artists SET name = :name, phone = :phone, email = :email, img = :img, birthday = :birthday WHERE id = :id";
+    $sql = "UPDATE artists SET name = :name, phone = :phone, img = :img, birthday = :birthday, user_id = :user_id WHERE id = :id";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':phone', $phone);
-    $stmt->bindParam(':email', $email);
     $stmt->bindParam(':img', $img);
     $stmt->bindParam(':birthday', $birthday);
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->bindParam(':id', $id);
     $stmt->execute();
 }
 
