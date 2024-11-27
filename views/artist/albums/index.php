@@ -1,5 +1,5 @@
 <?php include "views/layouts/header-artist.php"?>
-<form action="searchuser" method="post">
+<form action="searchalbum" method="post">
     <input type="text" name="search" value="<?= $_POST['search'] ?? "" ?>"> 
     <button>Search</button>
 </form>

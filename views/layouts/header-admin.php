@@ -34,6 +34,9 @@ if(!isset($_SESSION['login']) or $_SESSION['login']['role']!='admin' && $_SESSIO
         <li class="nav-item">
           <a class="nav-link" href="<?= $baseurl ?>/artistmanager">Artists</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= $baseurl ?>/genremanager">Genres</a>
+        </li>
       </ul>
       <form action="<?=$baseurl?>/logout" method="POST" class="d-flex" style="color: white">
         <?php if(isset($_SESSION['login'])){?>

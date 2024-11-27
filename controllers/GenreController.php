@@ -1,26 +1,24 @@
 <?php 
-// AlbumController.php (Artist)
+// GenreController.php (Admin)
 include_once "models/Genre.php";
-include_once "models/Album.php";
 switch($action){
-    case "albummanager":
-        $albums = getAlbums();
-        include "views/artist/albums/index.php";
+    case "genremanager":
+        $genres = getGenres();
+        include "views/admin/genres/index.php";
         break;
         
-    case "addalbum":
-        $albums = getAlbums();
-        $artists = getAllArtists();
-        include "views/artist/albums/add.php";
+    case "addgenre":
+        $genres = getGenres();
+        include "views/admin/genres/add.php";
         break;
-    case "postalbum":
+    case "postgenre":
         $errors = [];
-        $albumName=$_POST['albumName']??"";
-        if($albumName == "") {
-            array_push($errors, "Vui lòng nhập tên album");
+        $genreName=$_POST['genreName']??"";
+        if($genreName == "") {
+            array_push($errors, "Vui lòng nhập tên thể loại");
         }
         $img = $_FILES["img"]["name"]??"";
-        $target_file = "public/imgs/albums/$img";
+        $target_file = "public/imgs/genres/$img";
         if ($img == "") {
             array_push($errors, "Ảnh không được để trống");
         } else {
@@ -37,34 +35,27 @@ switch($action){
             //     array_push($errors, "Kích thước ảnh quá lớn");
             // }
         }
-        $created = $_POST['created']??"";
-        if($created == "") {
-            array_push($errors, "Vui lòng nhập ngày tạo");
-        }
-        $artist=$_POST['artist']??"";
-        $artists = getAllArtists();
-        // include "views/artist/albums/add.php";
+        // include "views/admin/genres/add.php";
         if (count($errors) == 0) {      
-            addAlbum($albumName, $img, $created, $artist);
+            addGenre($genreName, $img);
             move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
-            header("Location: $baseurl/albummanager");
+            header("Location: $baseurl/genremanager");
         }
         break;
 
-    case "editalbum":
+    case "editgenre":
         $id = $_GET['id'];
-        $album = getAlbum($id);
-        $artists = getAllArtists();
-        include "views/artist/albums/edit.php";
+        $genre = getGenre($id);
+        include "views/admin/genres/edit.php";
         break;
-    case "updatealbum":
+    case "updategenre":
         $errors = [];
-        $albumName=$_POST['albumName']??"";
-        if($albumName == "") {
-            array_push($errors, "Vui lòng nhập tên album");
+        $genreName=$_POST['genreName']??"";
+        if($genreName == "") {
+            array_push($errors, "Vui lòng nhập tên thể loại");
         }
         $img = $_FILES["img"]["name"]??"";
-        $target_file = "public/imgs/albums/$img";
+        $target_file = "public/imgs/genres/$img";
         if ($img == "") {
             array_push($errors, "Ảnh không được để trống");
         } else {
@@ -81,35 +72,29 @@ switch($action){
             //     array_push($errors, "Kích thước ảnh quá lớn");
             // }
         }
-        $created = $_POST['created']??"";
-        if($created == "") {
-            array_push($errors, "Vui lòng nhập ngày tạo");
-        }
         $id = $_GET['id'];
-        $artist=$_POST['artist']??"";
-        $artists = getAllArtists();
-        // include "views/artist/albums/edit.php";
+        // include "views/admin/artists/edit.php";
         if (count($errors) == 0) {      
             if ($img == "") {
                 $oldImg = $_POST['oldImg'] ?? "";
-                updateAlbum($id, $albumName, $oldImg, $created, $artist);
+                updateGenre($id, $genreName, $oldImg);
             } else {
-                updateAlbum($id, $albumName, $img, $created, $artist);
+                updateGenre($id, $genreName, $img);
                 move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
             }
-            header("Location: $baseurl/albummanager");
+            header("Location: $baseurl/genremanager");
         }
         break;
 
-    case "deletealbum":
+    case "deletegenre":
         $id = $_GET['id'] ?? "";
-        deleteAlbum($id);
-        header("Location: $baseurl/albummanager");
+        deleteGenre($id);
+        header("Location: $baseurl/genremanager");
         break;
 
-    case "searchalbum":
+    case "searchgenre":
         $search = $_POST['search'] ?? "";
-        $albums = searchAlbum($search); 
-        include "views/artist/albums/index.php";
+        $genres = searchGenre($search);
+        include "views/admin/genres/index.php";
         break;
 }
