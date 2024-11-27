@@ -1,94 +1,115 @@
 <?php 
 // AlbumController.php (Artist)
-include_once "models/User.php";
+include_once "models/Genre.php";
+include_once "models/Album.php";
 switch($action){
-    case "user":
-        $users = getAllUsers();
-        include "views/admin/users/index.php";
+    case "albummanager":
+        $albums = getAlbums();
+        include "views/artist/albums/index.php";
         break;
         
-    case "adduser":
-        $users = getAllUsers();
-        include "views/admin/users/add.php";
+    case "addalbum":
+        $albums = getAlbums();
+        $artists = getAllArtists();
+        include "views/artist/albums/add.php";
         break;
-    case "postuser":
+    case "postalbum":
         $errors = [];
-        $username=$_POST['username']??"";
-        if($username == "") {
-            array_push($errors, "Vui lòng nhập username");
+        $albumName=$_POST['albumName']??"";
+        if($albumName == "") {
+            array_push($errors, "Vui lòng nhập tên album");
         }
-        $password = $_POST['password'] ?? "";
-        if ($password == "") {
-            array_push($errors, "Vui lòng nhập password");
+        $img = $_FILES["img"]["name"]??"";
+        $target_file = "public/imgs/albums/$img";
+        if ($img == "") {
+            array_push($errors, "Ảnh không được để trống");
         } else {
-            $password = md5($password);
+            $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            if ($imgFileType != "jpg" && $imgFileType != "png" && $imgFileType != "jpeg"
+                && $imgFileType != "gif") {
+                array_push($errors, "Ảnh không đúng định dạng");
+            }
+           
+            if (file_exists($target_file)) {
+                array_push($errors, "Tên ảnh đã tồn tại");          
+            }
+            // if ($_FILES["img"]["size"] > 500000) {
+            //     array_push($errors, "Kích thước ảnh quá lớn");
+            // }
         }
-        $email=$_POST['email']??"";
-        if($email == "") {
-            array_push($errors, "Vui lòng nhập email");
+        $created = $_POST['created']??"";
+        if($created == "") {
+            array_push($errors, "Vui lòng nhập ngày tạo");
         }
-        $phone=$_POST['phone']??"";
-        if($phone == "") {
-            array_push($errors, "Vui lòng nhập sđt");
-        }
-        $role_id=$_POST['role_id']??"";
-        if($role_id == "") {
-            array_push($errors, "Vui lòng nhập role id");
-        }
-        include "views/admin/users/add.php";
+        $artist=$_POST['artist']??"";
+        $artists = getAllArtists();
+        // include "views/artist/albums/add.php";
         if (count($errors) == 0) {      
-            addUser($username, $password, $email, $phone, $role_id);
-            header("Location: $baseurl/user");
-        }          
+            addAlbum($albumName, $img, $created, $artist);
+            move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+            header("Location: $baseurl/albummanager");
+        }
         break;
 
-    case "edituser":
+    case "editalbum":
         $id = $_GET['id'];
-        $user = getUser($id);
-        include "views/admin/users/edit.php";
+        $album = getAlbum($id);
+        $artists = getAllArtists();
+        include "views/artist/albums/edit.php";
         break;
-    case "updateuser":
+    case "updatealbum":
         $errors = [];
-        $username=$_POST['username']??"";
-        if($username == "") {
-            array_push($errors, "Vui lòng nhập username");
+        $albumName=$_POST['albumName']??"";
+        if($albumName == "") {
+            array_push($errors, "Vui lòng nhập tên album");
         }
-        $password = $_POST['password']??"";
-        if ($password == "") {
-            array_push($errors, "Vui lòng nhập password");
+        $img = $_FILES["img"]["name"]??"";
+        $target_file = "public/imgs/albums/$img";
+        if ($img == "") {
+            array_push($errors, "Ảnh không được để trống");
         } else {
-            $password = md5($password);
+            $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            if ($imgFileType != "jpg" && $imgFileType != "png" && $imgFileType != "jpeg"
+                && $imgFileType != "gif") {
+                array_push($errors, "Ảnh không đúng định dạng");
+            }
+           
+            if (file_exists($target_file)) {
+                array_push($errors, "Tên ảnh đã tồn tại");                
+            }
+            // if ($_FILES["img"]["size"] > 500000) {
+            //     array_push($errors, "Kích thước ảnh quá lớn");
+            // }
         }
-        $email=$_POST['email']??"";
-        if($email == "") {
-            array_push($errors, "Vui lòng nhập email");
-        }
-        $phone=$_POST['phone']??"";
-        if($phone == "") {
-            array_push($errors, "Vui lòng nhập sđt");
-        }
-        $role_id=$_POST['role_id']??"";
-        if($role_id == "") {
-            array_push($errors, "Vui lòng nhập role id");
+        $created = $_POST['created']??"";
+        if($created == "") {
+            array_push($errors, "Vui lòng nhập ngày tạo");
         }
         $id = $_GET['id'];
-        $users = getAllUsers();
-        include "views/admin/users/edit.php";
-        if (count($errors) == 0) {
-            updateUser($id, $username, $password, $email, $phone, $role_id);
-            header("Location: $baseurl/user");
+        $artist=$_POST['artist']??"";
+        $artists = getAllArtists();
+        // include "views/artist/albums/edit.php";
+        if (count($errors) == 0) {      
+            if ($img == "") {
+                $oldImg = $_POST['oldImg'] ?? "";
+                updateAlbum($id, $albumName, $oldImg, $created, $artist);
+            } else {
+                updateAlbum($id, $albumName, $img, $created, $artist);
+                move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+            }
+            header("Location: $baseurl/albummanager");
         }
         break;
 
-    case "deleteuser":
+    case "deletealbum":
         $id = $_GET['id'] ?? "";
-        deleteUser($id);
-        header("Location: $baseurl/user");
+        deleteAlbum($id);
+        header("Location: $baseurl/albummanager");
         break;
 
-    case "searchuser":
+    case "searchalbum":
         $search = $_POST['search'] ?? "";
-        $users = searchUser($search); 
-        include "views/admin/users/index.php";
+        $users = searchAlbum($search); 
+        include "views/artist/albums/index.php";
         break;
 }

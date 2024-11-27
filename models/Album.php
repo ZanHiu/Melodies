@@ -36,7 +36,7 @@ function addAlbum($albumName, $img, $created, $artist_id){
     $sql = "INSERT INTO albums(albumName, img, created, artist_id) VALUES(:albumName, :img, :created, :artist_id)";   
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':albumName', $albumName);
-    $stmt->bindParam(':img',$img);
+    $stmt->bindParam(':img', $img);
     $stmt->bindParam(':created', $created);
     $stmt->bindParam(':artist_id', $artist_id);
     $stmt->execute();
