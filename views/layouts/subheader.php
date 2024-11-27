@@ -6,11 +6,11 @@
       </div>
       <div class="header">
         <nav>
-          <a href="#">
-            Share
-          </a>
-          <a href="#">
+          <a href="<?=$baseurl?>/about">
             About Us
+          </a>
+          <a href="<?=$baseurl?>/contact">
+            Contact
           </a>
           <a href="#">
             Premium
