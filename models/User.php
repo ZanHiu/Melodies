@@ -34,7 +34,7 @@ function login($email, $password){
 
 function getAllUsers(){
     global $conn;
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT users.*, subscriptions.type FROM users LEFT JOIN subscriptions ON users.sub_id = subscriptions.id";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -51,33 +51,44 @@ function getUser($id) {
     return $user;
 }
 
-function addUser($name, $phone, $email, $img, $birthday, $password, $role, $sub_id) {
+function getAllSubs() {
     global $conn;
-    $sql = "INSERT INTO users(name,phone,email,img,birthday,password,role,sub_id) VALUES(:name, :phone, :email, :img, :birthday, :password, :role, :sub_id)";
+    $sql = "SELECT * FROM subscriptions";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $subs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $subs;
+}
+
+function addUser($name, $password, $email, $phone, $img, $birthday, $role, $sub_id) {
+    global $conn;
+    $sql = "INSERT INTO users(name,password,email,phone,img,birthday,role,sub_id) VALUES(:name, :password, :email, :phone, :img, :birthday, :role, :sub_id)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':name', $name);
-    $stmt->bindParam(':phone', $phone);
+    $stmt->bindParam(':password', $password);
     $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':phone', $phone);
     $stmt->bindParam(':img', $img);
     $stmt->bindParam(':birthday', $birthday);
-    $stmt->bindParam(':password', $password);
     $stmt->bindParam(':role', $role);
     $stmt->bindParam(':sub_id', $sub_id);
     $stmt->execute();
     return $conn->lastInsertId();
 }
 
-function updateUser($id, $name, $password, $email, $phone, $role, $sub_id) {
+function updateUser($id, $name, $password, $email, $phone, $img, $birthday, $role, $sub_id) {
     global $conn;
-    $sql = "UPDATE users SET name = :name, password = :password, email = :email, phone = :phone, role = :role, sub_id = :sub_id WHERE id = :id";
+    $sql = "UPDATE users SET name = :name, password = :password, email = :email, phone = :phone, img = :img, birthday = :birthday, role = :role, sub_id = :sub_id WHERE id = :id";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':password', $password);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':phone', $phone);
+    $stmt->bindParam(':img', $img);
+    $stmt->bindParam(':birthday', $birthday);
     $stmt->bindParam(':role', $role);
-    $stmt->bindParam(':sub_id', $sub_id, PDO::PARAM_INT);
+    $stmt->bindParam(':sub_id', $sub_id);
+    $stmt->bindParam(':id', $id);
     $stmt->execute();
 }
 

@@ -29,10 +29,10 @@ if(!isset($_SESSION['login']) or $_SESSION['login']['role']!='admin' && $_SESSIO
           <a class="nav-link" href="<?= $baseurl ?>/adminboard">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= $baseurl ?>/user-manager">Users</a>
+          <a class="nav-link" href="<?= $baseurl ?>/usermanager">Users</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= $baseurl ?>/artist-manager">Artists</a>
+          <a class="nav-link" href="<?= $baseurl ?>/artistmanager">Artists</a>
         </li>
       </ul>
       <form action="<?=$baseurl?>/logout" method="POST" class="d-flex" style="color: white">
