@@ -9,21 +9,27 @@
 <table class="table table-hover">
     <tr>
         <th>Id</th>
-        <th>Username</th>
+        <th>User Name</th>
         <th>Password</th>
         <th>Email</th>
         <th>Phone</th>
+        <th>Image</th>
+        <th>Birthday</th>
         <th>Role</th>
+        <th>Sub Type</th>
         <th>Action</th>
     </tr>
     <?php foreach ($users as $user) {?>
         <tr>
             <td><?php echo $user['id']?></td>
-            <td><?php echo $user['username']?></td>
-            <td><i>Mật khẩu đã mã hóa</i></td>
+            <td><?php echo $user['name']?></td>
+            <td><i><?php echo $user['password']?></i></td>
             <td><?php echo $user['email']?></td>
             <td><?php echo $user['phone']?></td>
-            <td><?php echo $user['role_id']?></td>
+            <td><img src="<?= $baseurl?>/public/imgs/artists/<?= $user['img'] ?>" alt="" style="width: 100px; height: 100px"></td>
+            <td><?php echo $user['birthday']?></td>
+            <td><?php echo $user['role']?></td>
+            <td><?php echo $user['type']?></td>
             <td>
                 <a href="<?=$baseurl?>/edituser/<?=$user['id']?>" class="btn btn-primary">Edit</a>
                 <a href="<?=$baseurl?>/deleteuser/<?=$user['id']?>" onclick="return confirm('Bạn có thực sự muốn xóa?')" class="btn btn-danger">Delete</a>
@@ -31,4 +37,4 @@
         </tr>
     <?php }?>
 </table>
-<?php include "views/layouts/footer-admin.php"?>
+<?php include "views/layouts/footer-board.php"?>
