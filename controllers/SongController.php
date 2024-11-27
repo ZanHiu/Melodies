@@ -131,15 +131,15 @@ switch($action){
         }
         break;
 
-    case "deleteuser":
+    case "deletesong":
         $id = $_GET['id'] ?? "";
-        deleteUser($id);
-        header("Location: $baseurl/user");
+        deleteSong($id);
+        header("Location: $baseurl/songmanager");
         break;
 
-    case "searchuser":
+    case "searchsong":
         $search = $_POST['search'] ?? "";
         $users = searchUser($search); 
-        include "views/admin/users/index.php";
+        include "views/artist/songs/index.php";
         break;
 }

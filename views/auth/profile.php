@@ -81,28 +81,27 @@
           <td></td>
           <td style="text-align: center;">Time</td>
         </tr>
-        <?php foreach ($songs as $index => $song) {?>
+        <!-- <?php foreach ($songs as $index => $song) {?>
           <tr class="song-item">
             <td class="song-index">
               <?=$index+1?>
             </td>
             <td class="song-infor">
               <img alt="" height="60"
-                src="<?=$baseurl?>/public/imgs/songs/<?=$song['img']?>"
+              src="<?=$baseurl?>/public/imgs/songs/<?=$song['img']?>"
                 width="60" />
                 <div class="song-name">
-                  <?=$song['songName']?>
+                <?=$song['songName']?>
                   <div class="song-artist"><?=$song['name']?></div>
                 </div>
             </td>
             <td><?=$song['created']?></td>
-            <!-- <td><?=$song['genreName']?></td> -->
             <td>
               <i class="fas fa-heart"></i>
             </td>
             <td class="song-time">3:26</td>
           </tr>
-        <?php }?>
+        <?php }?> -->
       </table>
       <!-- <div class="btn-wrapper">
         <a class="view-all-btn" href="#">
@@ -121,7 +120,7 @@
         </span>
       </h2>
       <div class="artists">
-        <?php foreach ($follows as $follow) {?>
+        <!-- <?php foreach ($follows as $follow) {?>
           <a href="<?=$baseurl?>/artist/<?= $follow['id']?>">
             <div class="artist">
               <img alt=""
@@ -131,7 +130,7 @@
               </p>
             </div>
           </a>
-        <?php }?>
+        <?php }?> -->
         <a class="view-all" href="#">
           <div class="icon"><i class="fas fa-plus"></i></div>
           <p>View all</p>
