@@ -38,7 +38,13 @@
           ">
             Contact
           </a>
-          <a href="#">
+          <a href="
+            <?php if (isset($_SESSION['login'])){?>
+              <?=$baseurl?>/premium
+            <?php } else { ?>
+              <?=$baseurl?>/login
+            <?php } ?>
+          ">
             Premium
           </a>
         </nav>

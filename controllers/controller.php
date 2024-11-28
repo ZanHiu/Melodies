@@ -9,4 +9,5 @@
  include "AlbumController.php";
  include "ArtistController.php";
  include "GenreController.php";
+ include "PremiumController.php";
 ?>

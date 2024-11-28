@@ -12,7 +12,7 @@
           <a href="<?=$baseurl?>/contact">
             Contact
           </a>
-          <a href="#">
+          <a href="<?=$baseurl?>/premium">
             Premium
           </a>
         </nav>
