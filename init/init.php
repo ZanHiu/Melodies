@@ -1,7 +1,7 @@
 <?php 
  include "config.php";
  session_start();
- $baseurl="http://localhost/PRO1014 - DU AN 1/Assignments/Melodies";
+ $baseurl="http://localhost/da1/Melodies";
  $action=$_GET['action']??"";
  include "controllers/controller.php";
 ?>
