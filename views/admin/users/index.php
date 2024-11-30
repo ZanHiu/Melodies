@@ -32,7 +32,7 @@
             <td><?php echo $user['type']?></td>
             <td>
                 <a href="<?=$baseurl?>/edituser/<?=$user['id']?>" class="btn btn-primary">Edit</a>
-                <a href="<?=$baseurl?>/deleteuser/<?=$user['id']?>" onclick="return confirm('Bạn có thực sự muốn xóa?')" class="btn btn-danger">Delete</a>
+                <!-- <a href="<?=$baseurl?>/deleteuser/<?=$user['id']?>" onclick="return confirm('Bạn có thực sự muốn xóa?')" class="btn btn-danger">Delete</a> -->
             </td>
         </tr>
     <?php }?>

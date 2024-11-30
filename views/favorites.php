@@ -41,10 +41,10 @@
             </div>
           <?php }?>
 
-          <a class="view-all" href="#">
+          <!-- <a class="view-all" href="#">
             <div class="icon"><i class="fas fa-plus"></i></div>
             <p>View all</p>
-          </a>
+          </a> -->
         </div>
      </div>
     </div>

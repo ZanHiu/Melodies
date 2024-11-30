@@ -76,7 +76,7 @@
           high quality and enjoy without interruptions. Whatever your taste in music, we have it all for you.
         </p>
         <div class="buttons">
-          <a class="discover" href="#">
+          <a class="discover" href="<?=$baseurl?>/discover">
             Discover Now
           </a>
           <a class="create" href="#">
@@ -97,17 +97,19 @@
       </h2>
       <div class="songs">
         <?php foreach ($viewSongs as $viewSong) {?>
-          <div class="song">
-            <img alt="" src="<?=$baseurl?>/public/imgs/songs/<?=$viewSong['img']?>"/>
-            <p class="title">
-              <?=$viewSong['songName']?>
-            </p>
-            <p class="artist-name">
-              <?=$viewSong['name']?>
-            </p>
-          </div>
+          <a href="<?=$baseurl?>/song/<?=$viewSong['id']?>">
+            <div class="song">
+              <img alt="" src="<?=$baseurl?>/public/imgs/songs/<?=$viewSong['img']?>"/>
+              <p class="title">
+                <?=$viewSong['songName']?>
+              </p>
+              <p class="artist-name">
+                <?=$viewSong['name']?>
+              </p>
+            </div>
+          </a>
         <?php }?>
-        <a class="view-all" href="#">
+        <a class="view-all" href="<?=$baseurl?>/mostplayed">
           <div class="icon"><i class="fas fa-plus"></i></div>
           <p>View all</p>
         </a>
@@ -124,15 +126,17 @@
       </h2>
       <div class="songs">
         <?php foreach ($newSongs as $newSong) {?>
-          <div class="song">
-            <img alt="" src="<?=$baseurl?>/public/imgs/songs/<?=$newSong['img']?>"/>
-            <p class="title">
-              <?=$newSong['songName']?>
-            </p>
-            <p class="artist-name">
-              <?=$newSong['name']?>
-            </p>
-          </div>
+          <a href="<?=$baseurl?>/song/<?=$newSong['id']?>">
+            <div class="song">
+              <img alt="" src="<?=$baseurl?>/public/imgs/songs/<?=$newSong['img']?>"/>
+              <p class="title">
+                <?=$newSong['songName']?>
+              </p>
+              <p class="artist-name">
+                <?=$newSong['name']?>
+              </p>
+            </div>
+          </a>
         <?php }?>
         <a class="view-all" href="#">
           <div class="icon"><i class="fas fa-plus"></i></div>
@@ -168,7 +172,7 @@
                 src="<?=$baseurl?>/public/imgs/songs/<?=$topSong['img']?>"
                 width="60" />
                 <div class="song-name">
-                  <?=$topSong['songName']?>
+                  <a href="<?=$baseurl?>/song/<?=$topSong['id']?>"><?=$topSong['songName']?></a>
                   <div class="song-artist"><?=$topSong['name']?></div>
                 </div>
             </td>
@@ -200,15 +204,17 @@
       </h2>
       <div class="artists">
         <?php foreach ($artists as $artist) {?>
-          <div class="artist">
-            <img alt=""
-              src="<?=$baseurl?>/public/imgs/artists/<?=$artist['img']?>"/>
-            <p class="title">
-              <?=$artist['name']?>
-            </p>
-          </div>
+          <a href="<?=$baseurl?>/artist/<?=$artist['id']?>">
+            <div class="artist">
+              <img alt=""
+                src="<?=$baseurl?>/public/imgs/artists/<?=$artist['img']?>"/>
+              <p class="title">
+                <?=$artist['name']?>
+              </p>
+            </div>
+          </a>
         <?php }?>
-        <a class="view-all" href="#">
+        <a class="view-all" href="<?=$baseurl?>/artists">
           <div class="icon"><i class="fas fa-plus"></i></div>
           <p>View all</p>
         </a>
@@ -274,17 +280,19 @@
       </h2>
       <div class="songs">
         <?php foreach ($albums as $album) {?>
-          <div class="song">
-            <img alt="" src="<?=$baseurl?>/public/imgs/albums/<?=$album['img']?>"/>
-            <p class="title">
-              <?=$album['albumName']?>
-            </p>
-            <p class="artist-name">
-              <?=$album['name']?>
-            </p>
-          </div>
+          <a href="<?=$baseurl?>/album/<?=$album['id']?>">
+            <div class="song">
+              <img alt="" src="<?=$baseurl?>/public/imgs/albums/<?=$album['img']?>"/>
+              <p class="title">
+                <?=$album['albumName']?>
+              </p>
+              <p class="artist-name">
+                <?=$album['name']?>
+              </p>
+            </div>
+          </a>
         <?php }?>
-        <a class="view-all" href="#">
+        <a class="view-all" href="<?=$baseurl?>/albums">
           <div class="icon"><i class="fas fa-plus"></i></div>
           <p>View all</p>
         </a>

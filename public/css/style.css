@@ -61,6 +61,11 @@ body {
   padding: 48px 25px;
 }
 
+.main-content a {
+  text-decoration: none;
+  color: #fff;
+}
+
 /* Sub content */
 .sub-content {
   margin-left: 270px;
@@ -183,10 +188,14 @@ body {
 /* Song Section */
 .section .songs {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   gap: 40px;
+}
+.section .songs a {
+  text-decoration: none;
+  color: #fff;
 }
 .section .songs .song {
   width: 170px;
@@ -216,7 +225,7 @@ body {
 /* Artist Section */
 .section .artists {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -285,9 +294,12 @@ body {
 }
 
 /* Music Genres */
+.has-wrap {
+  flex-wrap: wrap;
+}
 .sub-hero-content .music-genres {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
 }

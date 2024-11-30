@@ -1,5 +1,7 @@
 <div class="sidebar">
-    <h1>Melodies</h1>
+    <a style="text-decoration: none" href="<?=$baseurl?>">
+      <h1>Melodies</h1>
+    </a>
     <ul>
       <li class="menu-tab">Menu</li>
       <li>
