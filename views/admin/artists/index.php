@@ -26,7 +26,7 @@
             <td><?php echo $artist['username']?></td>
             <td>
                 <a href="<?=$baseurl?>/editartist/<?=$artist['id']?>" class="btn btn-primary">Edit</a>
-                <a href="<?=$baseurl?>/deleteartist/<?=$artist['id']?>" onclick="return confirm('Bạn có thực sự muốn xóa?')" class="btn btn-danger">Delete</a>
+                <!-- <a href="<?=$baseurl?>/deleteartist/<?=$artist['id']?>" onclick="return confirm('Bạn có thực sự muốn xóa?')" class="btn btn-danger">Delete</a> -->
             </td>
         </tr>
     <?php }?>

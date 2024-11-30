@@ -508,6 +508,11 @@ body {
   font-weight: 500;
 }
 
+.section .song-list .song-infor .song-name a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .section .song-list .song-infor .song-name .song-artist {
   font-size: 12px;
   font-weight: normal;

@@ -27,7 +27,7 @@
             Genres
           </span>
         </h2>
-        <div class="music-genres">
+        <div class="music-genres has-wrap">
           <?php foreach ($genres as $genre) { ?>
             <a href="<?=$baseurl?>/genre/<?= $genre['id']?>">
               <div class="genre">

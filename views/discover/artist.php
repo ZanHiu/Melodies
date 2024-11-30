@@ -79,7 +79,7 @@
                 src="<?=$baseurl?>/public/imgs/songs/<?=$song['img']?>"
                 width="60" />
                 <div class="song-name">
-                  <?=$song['songName']?>
+                  <a href="<?=$baseurl?>/song/<?=$song['id']?>"><?=$song['songName']?></a>
                   <div class="song-artist"><?=$song['name']?></div>
                 </div>
             </td>
