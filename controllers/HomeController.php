@@ -43,6 +43,9 @@ switch ($action) {
         $actived = "about";
         include "views/about.php";
         break;
+    case 'sendmail':
+        include "views/sendmail.php";
+        break;
     // case 'help':
     //     $actived = "help";
     //     include "views/help.php";
