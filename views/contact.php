@@ -1,3 +1,7 @@
+<?php
+  use views\mail\PHPMailer\src\PHPMailer;
+  use views\mail\PHPMailer\src\Exception;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,10 +34,70 @@
     h3{
         font-size:30px;
     }
+
+    .email-container {
+  width: 50%;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 15px;
+  display: block;
+  color: #555;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+button[type="reset"] {
+  background-color: #dc3545;
+}
+
+button[type="reset"]:hover {
+  background-color: #a71d2a;
+}
    
   </style>
 </head>
 <body>
+  
   <!-- Sidebar -->
   <?php include "views/layouts/sidebar.php" ?>
     
@@ -61,5 +125,23 @@
             <p>Bạn muốn ứng tuyển một công việc? Phần Việc làm</p>
             <p>Melodies USA, Inc. cung cấp dịch vụ Melodies tới những người dùng tại Hoa Kỳ. Melodies AB cung cấp dịch vụ Melodies tới những người dùng ở tất cả các thị trường khác.</p>
         </div>
-    
-    <?php include "views/layouts/footer.php" ?>
+
+        <div class="email-container">
+          <h1>Send Email</h1>
+          <form action="<?= $baseurl ?>/sendmail" method="post" enctype="multipart/form-data">
+            <label for="email">To:</label>
+            <input type="email" id="email" name="email" placeholder="Enter recipient's email" required>
+            
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="8" placeholder="Write your message here"></textarea>
+            
+            <div class="button-group">
+              <button type="submit" name="send">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  <?php include "views/layouts/footer.php" ?>
