@@ -83,7 +83,7 @@
           <p>Hủy bất cứ lúc nào</p>
           <p>Đăng kí hoặc thanh toán 1 lần</p>
           <p>59.000đ/2 tháng đầu sử dụng</p>
-          <a class="btn btn-secondary" href="#">59.000đ</a>
+          <a class="btn btn-secondary" href="<?=$baseurl?>/checkout">59.000đ</a>
           <p class="small">Có áp dụng điều khoản</p>
         </div>
       </div>

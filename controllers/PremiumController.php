@@ -10,4 +10,13 @@ $actived = "";
       $actived = "checkout";
       include "views/premium/checkout.php";
       break;
+    case 'charge':
+      include "views/paypal/charge.php";
+      break;
+    case 'cancel':
+      include "views/paypal/cancel.php";
+      break;
+    case 'success':
+      include "views/paypal/success.php";
+      break;
   }
