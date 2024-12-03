@@ -25,9 +25,9 @@
          <p style="padding-left: 20px;">1 tài khoản Premium sử dụng trên nhiều thiết bị</p>
          <p style="padding-left: 20px;">Hủy bất cứ lúc nào</p>
          <p style="padding-left: 20px;">Đăng kí hoặc thanh toán 1 lần</p>
-         <p style="padding-left: 20px;">59.000đ/2 tháng đầu sử dụng</p>
+         <p style="padding-left: 20px;">20.00$/2 tháng đầu sử dụng</p>
         </div>
-        <form action="<?=$baseurl?>/charge" method="post">
+        <form class="form-ck" action="<?=$baseurl?>/charge" method="post">
           <input type="text" name="amount" value="20.00" />
           <input type="submit" name="submit" value="Pay Now">
         </form>

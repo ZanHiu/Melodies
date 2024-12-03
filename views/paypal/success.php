@@ -22,7 +22,7 @@
 
    $db->query("INSERT INTO payments(payment_id, payer_id, payer_email, amount, currency, payment_status) VALUES('$payment_id', '$payer_id', '$payer_email', '$amount', '$currency', '$payment_status')");
    echo "Payment is successful. Your transaction id is: $payment_id";
-   echo "<p><a href='http://localhost/PRO1014/Assignments/Melodies'>Back to home</a></p>";
+   echo "<p><a href='http://localhost/da1/Melodies'>Back to home</a></p>";
   } else {
    echo $response->getMessage();
   }

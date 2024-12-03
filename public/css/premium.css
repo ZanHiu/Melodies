@@ -358,3 +358,31 @@
    .footer .social-media .social-media-icons a:hover {
     color: #EE10B0;
    }
+   
+   .form-ck {
+    display: flex;
+    align-items: center;
+    width: 60%;
+   }
+   .form-ck input {
+    padding: 10px 20px;
+    margin-right: 10px;
+   }
+
+   .form-ck input[type="text"] {
+    padding: 10px 20px;
+    background-color: #ee10af00;
+    color: #EE10B0;
+    border-radius: 20px;
+    border: #EE10B0 solid 1px;
+   }
+
+   .form-ck input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #EE10B0;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+   }
+
+   
